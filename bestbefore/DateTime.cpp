@@ -21,7 +21,7 @@ namespace SpotifyPuzzles {
         return false;
     }
 
-    string DateTime::toString() {
+    string DateTime::str() {
         if (!isLegal())
             return "is illegal";
 
