@@ -15,6 +15,7 @@ namespace SpotifyPuzzles {
 
         private:
             bool isLegal();
+            int daysInMonth(int month, int year);
     };
 }
 #endif
