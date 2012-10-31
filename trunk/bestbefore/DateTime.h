@@ -11,7 +11,7 @@ namespace SpotifyPuzzles {
         public:
             DateTime(int day, int month, int year);
 
-            std::string toString();
+            std::string str();
 
         private:
             bool isLegal();
