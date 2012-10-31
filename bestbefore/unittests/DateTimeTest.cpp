@@ -8,6 +8,9 @@ namespace {
 
         SpotifyPuzzles::DateTime dt2(28, 2, 2011);
         CHECK_EQUAL("2011-02-28", dt2.str());
+
+        SpotifyPuzzles::DateTime dt3(5, 5, 1999);
+        CHECK_EQUAL("1999-05-05", dt3.str());
     }
 
     TEST(GetToStringOfIncorrectNotLeapDate) {
@@ -37,10 +40,34 @@ namespace {
         }
     }
 
-//    TEST(CheckLeapYearWithToString) {
-//        {
-//            SpotifyPuzzles::DateTime dt(29, 2, 2012);
-//            CHECK_EQUAL("2012-02-29", dt.str());
-//        }
-//    }
+    TEST(CheckLeapYearWithToString) {
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 2012);
+            CHECK_EQUAL("2012-02-29", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 2011);
+            CHECK_EQUAL("is illegal", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 2000);
+            CHECK_EQUAL("2000-02-29", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 1900);
+            CHECK_EQUAL("is illegal", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 1600);
+            CHECK_EQUAL("1600-02-29", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 2400);
+            CHECK_EQUAL("2400-02-29", dt.str());
+        }
+        {
+            SpotifyPuzzles::DateTime dt(29, 2, 2300);
+            CHECK_EQUAL("is illegal", dt.str());
+        }
+    }
 }

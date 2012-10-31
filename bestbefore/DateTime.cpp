@@ -12,13 +12,35 @@ namespace SpotifyPuzzles {
     }
 
     bool DateTime::isLegal() {
-        static int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (m_day < 0)
+            return false;
 
-        if (0 < m_month && m_month <= 12) {
-            return 0 < m_day && m_day <= daysInMonth[m_month - 1];
+        return 0 < m_day && m_day <= daysInMonth(m_month, m_year);
+    }
+
+    int DateTime::daysInMonth(int month, int year) {
+        static const int leapDays = 29;
+        static const int nonleapDays = 28;
+        static const int daysMap[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        if (month != 2) {
+            // not February
+            if (0 < month && month <= 12)
+                return daysMap[month - 1];
+            else
+                return -1;
         }
-
-        return false;
+        else {
+            // February... check if in a leap year
+            if (year % 400 == 0)
+                return leapDays;
+            else if (year % 100 == 0)
+                return nonleapDays;
+            else if (year % 4 == 0)
+                return leapDays;
+            else
+                return nonleapDays;
+        }
     }
 
     string DateTime::str() {
