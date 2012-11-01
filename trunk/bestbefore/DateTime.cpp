@@ -47,11 +47,7 @@ namespace SpotifyPuzzles {
         return results;
     }
 
-    DateTime DateTime::parseEarliest2000(const std::string& str) {
-        vector<int> tokens = tokenize<int>(str, "/", StringToIntConverter());
-        if (tokens.size() != 3)
-            return DateTime(str);
-
+    DateTime DateTime::createDateTime(vector<int>& tokens, const string& str) {
         sort(tokens.begin(), tokens.end());
         do {
             DateTime result(tokens[2], tokens[1], tokens[0]);
@@ -60,6 +56,22 @@ namespace SpotifyPuzzles {
         } while (next_permutation(tokens.begin(), tokens.end()));
 
         return DateTime(str);
+    }
+
+    DateTime DateTime::parseEarliest2000(const std::string& str) {
+        vector<int> tokens = tokenize<int>(str, "/", StringToIntConverter());
+        if (tokens.size() != 3)
+            return DateTime(str);
+
+        return createDateTime(tokens, str);
+    }
+
+    DateTime DateTime::parseEarliest2000(std::istream& istr) {
+        string line;
+        istr >> line;
+//        std::getline(istr, line);
+
+        return parseEarliest2000(line);
     }
 
     bool DateTime::isValid() {

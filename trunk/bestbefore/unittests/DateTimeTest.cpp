@@ -1,5 +1,7 @@
+#if defined(UNITTEST)
 #include <UnitTest++.h>
 #include "..\DateTime.h"
+#include <sstream>
 
 namespace {
     TEST(GetToStringOfCorrectNotLeapDate) {
@@ -84,4 +86,14 @@ namespace {
             CHECK_EQUAL("2067-02-04", SpotifyPuzzles::DateTime::parseEarliest2000("02/4/67").str());
             CHECK_EQUAL("31/9/73 is illegal", SpotifyPuzzles::DateTime::parseEarliest2000("31/9/73").str());
     }
+
+    TEST(CheckParseMethodsEquality) {
+        SpotifyPuzzles::DateTime dt = SpotifyPuzzles::DateTime::parseEarliest2000("7/1/2");
+
+        std::istringstream istr("7/1/2", std::istringstream::in);
+        SpotifyPuzzles::DateTime dt2 = SpotifyPuzzles::DateTime::parseEarliest2000(istr);
+
+        CHECK_EQUAL(dt.str(), dt2.str());
+    }
 }
+#endif
