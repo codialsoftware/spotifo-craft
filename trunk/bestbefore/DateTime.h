@@ -22,7 +22,7 @@ namespace SpotifyPuzzles {
             static int normalizedYear(int year);
 
         private:
-            bool isLegal();
+            bool isValid();
             int daysInMonth(int month, int year);
     };
 }

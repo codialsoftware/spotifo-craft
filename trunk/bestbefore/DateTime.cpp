@@ -55,14 +55,14 @@ namespace SpotifyPuzzles {
         sort(tokens.begin(), tokens.end());
         do {
             DateTime result(tokens[2], tokens[1], tokens[0]);
-            if (result.isLegal())
+            if (result.isValid())
                 return result;
         } while (next_permutation(tokens.begin(), tokens.end()));
 
         return DateTime(str);
     }
 
-    bool DateTime::isLegal() {
+    bool DateTime::isValid() {
         if (m_day < 0)
             return false;
 
@@ -95,7 +95,7 @@ namespace SpotifyPuzzles {
     }
 
     string DateTime::str() {
-        if (!isLegal())
+        if (!isValid())
             if (m_parseString.empty())
                 return "is illegal";
             else
