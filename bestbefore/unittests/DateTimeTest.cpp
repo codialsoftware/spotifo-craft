@@ -79,4 +79,9 @@ namespace {
             CHECK_EQUAL("8/40/40 is illegal", SpotifyPuzzles::DateTime::parseEarliest2000("8/40/40").str());
             CHECK_EQUAL("2040-08-30", SpotifyPuzzles::DateTime::parseEarliest2000("8/40/30").str());
     }
+
+    TEST(ParseEarliestIn2000_InputFromSpotifyExample) {
+            CHECK_EQUAL("2067-02-04", SpotifyPuzzles::DateTime::parseEarliest2000("02/4/67").str());
+            CHECK_EQUAL("31/9/73 is illegal", SpotifyPuzzles::DateTime::parseEarliest2000("31/9/73").str());
+    }
 }
