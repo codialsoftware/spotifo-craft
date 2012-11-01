@@ -2,6 +2,8 @@
 #define DATE_TIME_H
 
 #include <string>
+#include <sstream>
+#include <vector>
 
 namespace SpotifyPuzzles {
     struct DateTime {
@@ -16,6 +18,7 @@ namespace SpotifyPuzzles {
         public:
             DateTime(int day, int month, int year);
             static DateTime parseEarliest2000(const std::string& str);
+            static DateTime parseEarliest2000(std::istream& istr);
 
             std::string str();
 
@@ -24,6 +27,7 @@ namespace SpotifyPuzzles {
         private:
             bool isValid();
             int daysInMonth(int month, int year);
+            static DateTime createDateTime(std::vector<int>& tokens, const std::string& str);
     };
 }
 #endif

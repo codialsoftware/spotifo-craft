@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1351626035 source:c:\programming\spotifyyourself\bestbefore\main.cpp
+1351803515 source:c:\programming\spotifyyourself\bestbefore\main.cpp
 	<iostream>
 	"unittest.h"
+	"DateTime.h"
 
 1351626033 c:\programming\spotifyyourself\bestbefore\unittest.h
 	<UnitTest++.h>
 
-1351729978 source:c:\programming\spotifyyourself\bestbefore\datetime.cpp
+1351804056 source:c:\programming\spotifyyourself\bestbefore\datetime.cpp
 	"DateTime.h"
 	<string>
 	<sstream>
@@ -15,8 +16,10 @@
 	<vector>
 	"StringToIntConverter.hpp"
 
-1351729978 c:\programming\spotifyyourself\bestbefore\datetime.h
+1351802414 c:\programming\spotifyyourself\bestbefore\datetime.h
 	<string>
+	<sstream>
+	<vector>
 
 1188366510 c:\programming\spotifyyourself\unittest++\src\unittest++.h
 	"Config.h"
@@ -105,9 +108,10 @@
 1351626043 source:c:\programming\spotifyyourself\bestbefore\main_unittest.cpp
 	"unittest.h"
 
-1351729773 source:c:\programming\spotifyyourself\bestbefore\unittests\datetimetest.cpp
+1351803396 source:c:\programming\spotifyyourself\bestbefore\unittests\datetimetest.cpp
 	<UnitTest++.h>
 	"..\DateTime.h"
+	<sstream>
 
 1351724661 source:c:\programming\spotifyyourself\bestbefore\stringtointconverter.hpp
 	<string>
