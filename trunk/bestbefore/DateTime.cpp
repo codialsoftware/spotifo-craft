@@ -95,11 +95,12 @@ namespace SpotifyPuzzles {
     }
 
     string DateTime::str() {
-        if (!isValid())
+        if (!isValid()) {
             if (m_parseString.empty())
                 return "is illegal";
             else
                 return m_parseString + " is illegal";
+        }
 
         stringstream ss;
 
