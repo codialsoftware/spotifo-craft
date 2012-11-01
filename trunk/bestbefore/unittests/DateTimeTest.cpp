@@ -70,4 +70,13 @@ namespace {
             CHECK_EQUAL("is illegal", dt.str());
         }
     }
+
+    TEST(ParseEarliestIn2000) {
+            CHECK_EQUAL("2011-11-11", SpotifyPuzzles::DateTime::parseEarliest2000("11/11/11").str());
+            CHECK_EQUAL("2010-11-12", SpotifyPuzzles::DateTime::parseEarliest2000("12/10/11").str());
+            CHECK_EQUAL("2072-01-02", SpotifyPuzzles::DateTime::parseEarliest2000("2/1/72").str());
+            CHECK_EQUAL("2001-02-07", SpotifyPuzzles::DateTime::parseEarliest2000("7/1/2").str());
+            CHECK_EQUAL("8/40/40 is illegal", SpotifyPuzzles::DateTime::parseEarliest2000("8/40/40").str());
+            CHECK_EQUAL("2040-08-30", SpotifyPuzzles::DateTime::parseEarliest2000("8/40/30").str());
+    }
 }

@@ -6,13 +6,16 @@
 1351626033 c:\programming\spotifyyourself\bestbefore\unittest.h
 	<UnitTest++.h>
 
-1351678709 source:c:\programming\spotifyyourself\bestbefore\datetime.cpp
+1351729738 source:c:\programming\spotifyyourself\bestbefore\datetime.cpp
 	"DateTime.h"
 	<string>
 	<sstream>
 	<iomanip>
+	<algorithm>
+	<vector>
+	"StringToIntConverter.hpp"
 
-1351681908 c:\programming\spotifyyourself\bestbefore\datetime.h
+1351729470 c:\programming\spotifyyourself\bestbefore\datetime.h
 	<string>
 
 1188366510 c:\programming\spotifyyourself\unittest++\src\unittest++.h
@@ -102,7 +105,15 @@
 1351626043 source:c:\programming\spotifyyourself\bestbefore\main_unittest.cpp
 	"unittest.h"
 
-1351681229 source:c:\programming\spotifyyourself\bestbefore\unittests\datetimetest.cpp
+1351729773 source:c:\programming\spotifyyourself\bestbefore\unittests\datetimetest.cpp
 	<UnitTest++.h>
 	"..\DateTime.h"
+
+1351724661 source:c:\programming\spotifyyourself\bestbefore\stringtointconverter.hpp
+	<string>
+	<sstream>
+
+1351724661 c:\programming\spotifyyourself\bestbefore\stringtointconverter.hpp
+	<string>
+	<sstream>
 
