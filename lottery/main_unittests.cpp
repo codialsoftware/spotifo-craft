@@ -1,3 +1,4 @@
+#if defined(UNITTEST)
 #include "shared/unittest.h"
 #include "Lottery.h"
 #include <string>
@@ -28,3 +29,4 @@ namespace {
 int run_unittest() {
     return UnitTest::RunAllTests();
 }
+#endif
