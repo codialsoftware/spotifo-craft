@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1351982155 source:c:\programming\spotifyyourself\lottery\main.cpp
+	<iostream>
+	"shared/unittest.h"
+
+1351982135 c:\programming\spotifyyourself\lottery\shared\unittest.h
+	<UnitTest++.h>
+
+1188366510 c:\programming\spotifyyourself\unittest++\src\unittest++.h
+	"Config.h"
+	"Test.h"
+	"TestList.h"
+	"TestSuite.h"
+	"TestResults.h"
+	"TestMacros.h"
+	"CheckMacros.h"
+	"TestRunner.h"
+	"TimeConstraint.h"
+
+1225377516 c:\programming\spotifyyourself\unittest++\src\config.h
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\test.h
+	"TestDetails.h"
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\testdetails.h
+
+1180467758 c:\programming\spotifyyourself\unittest++\src\testlist.h
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\testsuite.h
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\testresults.h
+
+1225394826 c:\programming\spotifyyourself\unittest++\src\testmacros.h
+	"Config.h"
+	"ExecuteTest.h"
+	"AssertException.h"
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"Posix/SignalTranslator.h"
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\executetest.h
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"AssertException.h"
+	"CurrentTest.h"
+	"Posix/SignalTranslator.h"
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\memoryoutstream.h
+	"Config.h"
+	<sstream>
+	<cstddef>
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\assertexception.h
+	<exception>
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\currenttest.h
+
+1224683802 c:\programming\spotifyyourself\unittest++\src\posix\signaltranslator.h
+	<setjmp.h>
+	<signal.h>
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\checkmacros.h
+	"Checks.h"
+	"AssertException.h"
+	"MemoryOutStream.h"
+	"TestDetails.h"
+	"CurrentTest.h"
+
+1225376862 c:\programming\spotifyyourself\unittest++\src\checks.h
+	"Config.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\testrunner.h
+	"Test.h"
+	"TestList.h"
+	"CurrentTest.h"
+
+1225291088 c:\programming\spotifyyourself\unittest++\src\timeconstraint.h
+	"TimeHelpers.h"
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\timehelpers.h
+	"Config.h"
+	"Posix/TimeHelpers.h"
+	"Win32/TimeHelpers.h"
+
+1174318456 c:\programming\spotifyyourself\unittest++\src\posix\timehelpers.h
+	<sys/time.h>
+
+1225377516 c:\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
+	"../Config.h"
+
+1351984923 source:c:\programming\spotifyyourself\lottery\main_unittests.cpp
+	"shared/unittest.h"
+	"Lottery.h"
+	<string>
+	<sstream>
+
+1351982249 c:\programming\spotifyyourself\lottery\lottery.h
+	<string>
+	<sstream>
+
+1351989600 source:c:\programming\spotifyyourself\lottery\lottery.cpp
+	<string>
+	<sstream>
+	<iomanip>
+	<cmath>
+	"Lottery.h"
+
