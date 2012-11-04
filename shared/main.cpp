@@ -1,5 +1,6 @@
 #include <iostream>
 #include "unittest.h"
+#include "main.h"
 using namespace std;
 
 int main() {
