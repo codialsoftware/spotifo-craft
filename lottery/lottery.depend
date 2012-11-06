@@ -157,5 +157,13 @@
 	"../combinatorics/all.h"
 	"BasicAlgorithm.hpp"
 
-1352225818 c:\programming\spotifyyourself\lottery\algorithms\basicalgorithm.hpp
+1352240437 c:\programming\spotifyyourself\lottery\algorithms\basicalgorithm.hpp
+	"AlgorithmBase.h"
+
+1352231465 c:\programming\spotifyyourself\lottery\algorithms\algorithmbase.h
+
+1352240315 source:c:\programming\spotifyyourself\lottery\algorithms\algorithmbase.cpp
+	"AlgorithmBase.h"
+	<cmath>
+	<algorithm>
 
