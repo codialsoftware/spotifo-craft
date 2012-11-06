@@ -4,32 +4,30 @@
 #include <sstream>
 #include <cmath>
 #include <algorithm>
+#include <vector>
 
 namespace SpotifyPuzzles { namespace Lottery {
     namespace impl {
         std::string convert(double value);
     }
 
-    template <class Func2>
-    double calculate (int attendees, int drawn, int tickets, int friends,  const Func2& choose) {
-        // T = minimum # of friends which must be drawn, so the entire group of friends can get tickets
-        int T = (int)ceil((float)friends / tickets);
-        // N = # of additions
-        int N = std::min(friends, drawn) - T;
-        int nonFriends = attendees - friends;
+    template <class Algorithm>
+    class Calculator {
+        Algorithm m_tmpAlg;
+        Algorithm& m_Algorithm;
 
-        double factor = 1.0 / choose(attendees, drawn);
-        double fraction = 0.0;
-        for (int i = 0; i <= N; ++i) {
-            int iteration = T + i;
+        public:
+            Calculator()
+                : m_tmpAlg(Algorithm())
+                , m_Algorithm(m_tmpAlg) {}
 
-            double f1 = choose(friends, iteration) * factor;
-            double f2 = choose(nonFriends, drawn - iteration);
-            fraction += f1 * f2;
-        }
+            Calculator(const Algorithm& alg)
+                : m_Algorithm(alg) {}
 
-        return fraction;
-    }
+            double operator()(int attendees, int drawn, int tickets, int friends) {
+                return m_Algorithm(attendees, drawn, tickets, friends);
+            }
+    };
 }}
 
 #endif // LOTTERY_H_INCLUDED
