@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
-	<File name="main.cpp" open="1" top="1" tabpos="0">
-		<Cursor position="61" topLine="0" />
+	<ActiveTarget name="Release" />
+	<File name="DateTime.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="2190" topLine="57" />
+	</File>
+	<File name="DateTime.h" open="0" top="0" tabpos="0">
+		<Cursor position="792" topLine="6" />
+	</File>
+	<File name="StringToIntConverter.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="186" topLine="0" />
+	</File>
+	<File name="main_unittest.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="17" topLine="0" />
+	</File>
+	<File name="shared\main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="83" topLine="0" />
+	</File>
+	<File name="unittests\DateTimeTest.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3428" topLine="66" />
 	</File>
 </CodeBlocks_layout_file>
