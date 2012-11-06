@@ -90,18 +90,18 @@
 1225377516 c:\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
 	"../Config.h"
 
-1352037830 source:c:\programming\spotifyyourself\lottery\main_unittests.cpp
+1352225709 source:c:\programming\spotifyyourself\lottery\main_unittests.cpp
 	"shared/unittest.h"
 	"Lottery.hpp"
+	"algorithms/BasicAlgorithmInstances.hpp"
 	<string>
 	<sstream>
-	"combinatorics/all.h"
 
 1352002776 c:\programming\spotifyyourself\lottery\lottery.h
 	<string>
 	<sstream>
 
-1352037879 source:c:\programming\spotifyyourself\lottery\lottery.cpp
+1352040655 source:c:\programming\spotifyyourself\lottery\lottery.cpp
 	<cassert>
 	<string>
 	<sstream>
@@ -118,29 +118,31 @@
 	"unittest.h"
 	"main.h"
 
-1352003905 c:\programming\spotifyyourself\lottery\combinatorics\all.h
+1352087527 c:\programming\spotifyyourself\lottery\combinatorics\all.h
 	"naive.hpp"
 	"recursive.hpp"
+	"recursive_buffered.hpp"
 
-1352037830 c:\programming\spotifyyourself\lottery\combinatorics\naive.hpp
+1352087892 c:\programming\spotifyyourself\lottery\combinatorics\naive.hpp
 	<string>
 
 1352003662 c:\programming\spotifyyourself\lottery\combinatorics\abstract_calculator.hpp
 	<string>
 	"..\Lottery.h"
 
-1352037830 c:\programming\spotifyyourself\lottery\combinatorics\recursive.hpp
+1352087885 c:\programming\spotifyyourself\lottery\combinatorics\recursive.hpp
 	<string>
 
 1352002776 c:\programming\spotifyyourself\lottery\\lottery.h
 	<string>
 	<sstream>
 
-1352038057 c:\programming\spotifyyourself\lottery\lottery.hpp
+1352225140 c:\programming\spotifyyourself\lottery\lottery.hpp
 	<string>
 	<sstream>
 	<cmath>
 	<algorithm>
+	<vector>
 
 1352091088 source:c:\programming\spotifyyourself\lottery\combinatorics\tests\recursivebuffered.cpp
 	<UnitTest++.h>
@@ -150,4 +152,10 @@
 	<string>
 	<vector>
 	<cassert>
+
+1352225634 c:\programming\spotifyyourself\lottery\algorithms\basicalgorithminstances.hpp
+	"../combinatorics/all.h"
+	"BasicAlgorithm.hpp"
+
+1352225818 c:\programming\spotifyyourself\lottery\algorithms\basicalgorithm.hpp
 
