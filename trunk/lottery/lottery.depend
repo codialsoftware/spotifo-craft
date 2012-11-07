@@ -90,7 +90,7 @@
 1225377516 c:\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
 	"../Config.h"
 
-1352251045 source:c:\programming\spotifyyourself\lottery\main_unittests.cpp
+1352253769 source:c:\programming\spotifyyourself\lottery\main_unittests.cpp
 	"shared/unittest.h"
 	"Lottery.hpp"
 	"algorithms/BasicAlgorithm.hpp"
@@ -110,8 +110,11 @@
 	<iomanip>
 	"Lottery.hpp"
 
-1351990197 source:c:\programming\spotifyyourself\lottery\main_default.cpp
+1352259856 source:c:\programming\spotifyyourself\lottery\main_default.cpp
+	<iostream>
 	"shared/main.h"
+	"algorithms/MultiplicatoryAlgorithm.hpp"
+	"Lottery.hpp"
 
 1351990146 c:\programming\spotifyyourself\lottery\shared\main.h
 
@@ -139,11 +142,12 @@
 	<string>
 	<sstream>
 
-1352225140 c:\programming\spotifyyourself\lottery\lottery.hpp
+1352260129 c:\programming\spotifyyourself\lottery\lottery.hpp
 	<string>
 	<sstream>
 	<cmath>
 	<algorithm>
+	<iostream>
 	<vector>
 
 1352091088 source:c:\programming\spotifyyourself\lottery\combinatorics\tests\recursivebuffered.cpp
@@ -169,7 +173,7 @@
 	<cmath>
 	<algorithm>
 
-1352250969 c:\programming\spotifyyourself\lottery\algorithms\multiplicatoryalgorithm.hpp
+1352253506 c:\programming\spotifyyourself\lottery\algorithms\multiplicatoryalgorithm.hpp
 	"AlgorithmBase.h"
 	<vector>
 	<algorithm>
