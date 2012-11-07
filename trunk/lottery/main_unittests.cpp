@@ -18,7 +18,7 @@ namespace {
     class BasicRecursiveAlgorithm: public BasicAlgorithm<CombinationsRecursive> {};
     class BufferedRecursiveAlgorithm: public BasicAlgorithm<CombinationsRecursiveBuffered> {};
 
-    const double EPSILON = 10e-9;
+    const double EPSILON = 1e-9;
 	#define check(exp, actual)	CHECK_CLOSE(exp, actual, EPSILON)
 
 	using namespace SpotifyPuzzles;
