@@ -9,7 +9,7 @@ namespace SpotifyPuzzles { namespace Combinatorics {
                 return 0;
             }
             unsigned long long r = 1;
-            for (unsigned long long d = 1; d <= k; ++d) {
+            for (int d = 1; d <= k; ++d) {
                 r *= n--;
                 r /= d;
             }
