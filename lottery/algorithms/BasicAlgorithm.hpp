@@ -20,7 +20,7 @@ namespace SpotifyPuzzles { namespace Lottery { namespace Algorithms {
                     int iteration = MinFriendsDrawn() + i;
 
                     double f1 = m_Choose(Friends(), iteration) * factor;
-                    double f2 = m_Choose(Oponents(), Drawns() - iteration);
+                    double f2 = m_Choose(Opponents(), Drawns() - iteration);
                     fraction += f1 * f2;
                 }
 

@@ -22,7 +22,7 @@ namespace SpotifyPuzzles { namespace Lottery { namespace Algorithms {
                 inline int Tickets() const { return m_Tickets; }
                 inline int MinFriendsDrawn() const { return m_MinFriendsDrawn; }
                 inline int NumeratorSteps() const { return m_NumeratorSteps; }
-                inline int Oponents() const {
+                inline int Opponents() const {
                     return Attendees() - Friends();
                 }
         };
