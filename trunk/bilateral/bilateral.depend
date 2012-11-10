@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1352579596 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.cpp
+	"BaseAlgorithm.h"
+
+1352579774 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.h
+	"Algorithm.hpp"
+
+1352579774 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithm.hpp
+	<iostream>
+
+1352261949 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_default.cpp
+	<iostream>
+
+1352580481 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_unittests.cpp
+	"shared/unittest.h"
+
+1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\unittest.h
+	<UnitTest++.h>
+
+1352255152 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\main.cpp
+	<iostream>
+	"unittest.h"
+	"main.h"
+
+1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\main.h
+
+1352579866 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithmbase.cpp
+	"Algorithm.hpp"
+
+1188366510 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\unittest++.h
+	"Config.h"
+	"Test.h"
+	"TestList.h"
+	"TestSuite.h"
+	"TestResults.h"
+	"TestMacros.h"
+	"CheckMacros.h"
+	"TestRunner.h"
+	"TimeConstraint.h"
+
+1225377516 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\config.h
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\test.h
+	"TestDetails.h"
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testdetails.h
+
+1180467758 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testlist.h
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testsuite.h
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testresults.h
+
+1225394826 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testmacros.h
+	"Config.h"
+	"ExecuteTest.h"
+	"AssertException.h"
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"Posix/SignalTranslator.h"
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\executetest.h
+	"TestDetails.h"
+	"MemoryOutStream.h"
+	"AssertException.h"
+	"CurrentTest.h"
+	"Posix/SignalTranslator.h"
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\memoryoutstream.h
+	"Config.h"
+	<sstream>
+	<cstddef>
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\assertexception.h
+	<exception>
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\currenttest.h
+
+1224683802 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\posix\signaltranslator.h
+	<setjmp.h>
+	<signal.h>
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\checkmacros.h
+	"Checks.h"
+	"AssertException.h"
+	"MemoryOutStream.h"
+	"TestDetails.h"
+	"CurrentTest.h"
+
+1225376862 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\checks.h
+	"Config.h"
+	"TestResults.h"
+	"MemoryOutStream.h"
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\testrunner.h
+	"Test.h"
+	"TestList.h"
+	"CurrentTest.h"
+
+1225291088 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\timeconstraint.h
+	"TimeHelpers.h"
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\timehelpers.h
+	"Config.h"
+	"Posix/TimeHelpers.h"
+	"Win32/TimeHelpers.h"
+
+1174318456 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\posix\timehelpers.h
+	<sys/time.h>
+
+1225377516 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
+	"../Config.h"
+
+1352591262 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.cpp
+	"testhelper.h"
+	<fstream>
+	<sstream>
+
+1352588188 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.h
+	"shared/unittest.h"
+	<string>
+	"algorithms/Algorithm.hpp"
+
