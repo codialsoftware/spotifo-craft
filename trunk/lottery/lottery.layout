@@ -2,19 +2,19 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug - unittest" />
 	<File name="Lottery.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="467" topLine="9" />
-	</File>
-	<File name="Lottery.h" open="0" top="0" tabpos="0">
-		<Cursor position="250" topLine="0" />
+		<Cursor position="373" topLine="0" />
 	</File>
 	<File name="combinatorics\naive.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="547" topLine="0" />
+		<Cursor position="520" topLine="0" />
 	</File>
 	<File name="combinatorics\recursive.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="495" topLine="0" />
+		<Cursor position="485" topLine="0" />
+	</File>
+	<File name="main_default.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="main_unittests.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="613" topLine="14" />
+		<Cursor position="1318" topLine="14" />
 	</File>
 	<File name="shared\main.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="61" topLine="0" />

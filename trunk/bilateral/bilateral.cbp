@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="lottery" />
+		<Option title="bilateral" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\lottery" prefix_auto="1" extension_auto="1" />
+				<Option output="bin\Debug\bilateral" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\lottery" prefix_auto="1" extension_auto="1" />
+				<Option output="bin\Release\bilateral" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj\Release\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -27,18 +27,17 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
-			<Target title="Debug - unittest">
-				<Option output="bin\Debug_UnitTest\lottery" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug_UnitTest" />
+			<Target title="Debug - UnitTest">
+				<Option output="bin\UnitTest-Debug\bilateral" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\UnitTest-Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-DUNITTEST" />
 					<Add directory="..\UnitTest++\src" />
 				</Compiler>
 				<Linker>
-					<Add library="libUnitTest++" />
+					<Add library="libUnitTest++.a" />
 					<Add directory="..\UnitTest++\bin\Release" />
 				</Linker>
 			</Target>
@@ -47,18 +46,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Lottery.cpp" />
-		<Unit filename="Lottery.hpp" />
-		<Unit filename="algorithms\AlgorithmBase.cpp" />
-		<Unit filename="algorithms\AlgorithmBase.h" />
-		<Unit filename="algorithms\BasicAlgorithm.hpp" />
-		<Unit filename="algorithms\MultiplicatoryAlgorithm.hpp" />
-		<Unit filename="combinatorics\Tests\RecursiveBuffered.cpp" />
-		<Unit filename="combinatorics\abstract_calculator.hpp" />
-		<Unit filename="combinatorics\all.h" />
-		<Unit filename="combinatorics\naive.hpp" />
-		<Unit filename="combinatorics\recursive.hpp" />
-		<Unit filename="combinatorics\recursive_buffered.hpp" />
+		<Unit filename="Graph.hpp" />
 		<Unit filename="main_default.cpp" />
 		<Unit filename="main_unittests.cpp" />
 		<Unit filename="shared\main.cpp" />

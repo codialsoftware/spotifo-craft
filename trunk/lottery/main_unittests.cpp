@@ -63,9 +63,9 @@ namespace {
     }
 
     // MultiplicatoryAlgorithm tests
-    TEST_FIXTURE(MultiplicatoryAlgorithm, LongLongOverflowTest) {
-        doLongLongOverflowTest(*this);
-    }
+//    TEST_FIXTURE(MultiplicatoryAlgorithm, LongLongOverflowTest) {
+//        doLongLongOverflowTest(*this);
+//    }
     TEST_FIXTURE(MultiplicatoryAlgorithm, SpotifyWebPageExamples) {
         doSpotifyWebPageExamples(*this);
     }
