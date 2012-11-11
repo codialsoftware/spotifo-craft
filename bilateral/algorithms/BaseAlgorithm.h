@@ -6,7 +6,7 @@
 namespace SpotifyPuzzles { namespace Bilateral { namespace Algorithms {
     class  BaseAlgorithm: public AlgorithmBase {
         protected:
-            void run(std::istream& in);
+            void Run(std::istream& in);
     };
 }}}
 

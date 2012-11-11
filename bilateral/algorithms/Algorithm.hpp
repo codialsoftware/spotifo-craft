@@ -1,18 +1,30 @@
 #ifndef ALGORITHM_HPP_INCLUDED
 #define ALGORITHM_HPP_INCLUDED
 
+#include <string>
 #include <iostream>
+#include <iterator>
+#include <algorithm>
+#include <vector>
 namespace SpotifyPuzzles { namespace Bilateral { namespace Algorithms {
     class AlgorithmBase {
         protected:
-            virtual void run(std::istream& in);
+            std::vector<int> m_Results;
+
+            virtual void Run(std::istream& in);
         public:
+            const std::vector<int>& Results() const;
+
             friend std::istream& operator>>(std::istream& in, AlgorithmBase& o) {
-                o.run(in);
+                o.Run(in);
                 return in;
             }
-
             friend std::ostream& operator<<(std::ostream& out, const AlgorithmBase& o) {
+                out << o.Results().size() << std::endl;
+
+                std::copy(o.Results().begin(),
+                    o.Results().end(),
+                    std::ostream_iterator<int>(out, "\n"));
                 return out;
             }
     };

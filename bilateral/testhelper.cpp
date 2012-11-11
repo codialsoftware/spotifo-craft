@@ -6,12 +6,12 @@
 using namespace std;
 using namespace SpotifyPuzzles::Bilateral::Algorithms;
 
-void openFile(fstream& input, const string& testName);
+void openFile(ifstream& input, const string& testName);
 void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output);
 void checkResults(const string& testName, istream& input);
 
 void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
-    fstream input;
+    ifstream input;
     openFile(input, testName);
 
     stringstream results;
@@ -27,9 +27,15 @@ void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
     checkResults(testName, results);
 }
 
-void openFile(fstream& input, const string& testName) {
-    string fileName = testName + ".in";
-    input.open(fileName.c_str(), fstream::in);
+string getPath(const string& fileName) {
+    return "bin\\UnitTest-Debug\\" + fileName;
+}
+
+void openFile(ifstream& input, const string& testName) {
+    string fileName = getPath(testName + ".in");
+    input.open(fileName.c_str());
+//    string path = ExePath();
+    fstream::iostate s = input.rdstate();
     if (input.is_open()) {
         input.exceptions(fstream::failbit | fstream::eofbit);
     }
@@ -41,16 +47,29 @@ void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output) {
 }
 
 void checkResults(const string& testName, istream& input) {
-    string fileName = testName + ".out";
+    string fileName = getPath(testName + ".out");
     fstream refInput;
     refInput.open(fileName.c_str(), fstream::in);
 
     try {
         input.seekg(0);
+        int exp, is;
 
+        input.exceptions(istream::failbit);
+        refInput.exceptions(istream::failbit);
+
+        while (!refInput.eof()) {
+            refInput >> exp;
+            input >> is;
+
+            CHECK_EQUAL(exp, is);
+        }
     }
     catch (...) {
+        CHECK(false);
     }
+
+    refInput.close();
 }
 
 #endif

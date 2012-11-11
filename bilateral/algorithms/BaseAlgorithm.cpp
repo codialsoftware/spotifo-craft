@@ -1,6 +1,6 @@
 #include "BaseAlgorithm.h"
 
 using namespace std;
-void SpotifyPuzzles::Bilateral::Algorithms::BaseAlgorithm::run(istream& in) {
-    AlgorithmBase::run(in);
+void SpotifyPuzzles::Bilateral::Algorithms::BaseAlgorithm::Run(istream& in) {
+    AlgorithmBase::Run(in);
 }
