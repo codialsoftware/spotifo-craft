@@ -1,18 +1,24 @@
 # depslib dependency file v1.0
-1352579596 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.cpp
+1352605541 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.cpp
 	"BaseAlgorithm.h"
 
-1352579774 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.h
+1352605620 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.h
 	"Algorithm.hpp"
 
-1352579774 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithm.hpp
+1352605679 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithm.hpp
+	<string>
 	<iostream>
+	<iterator>
+	<algorithm>
+	<vector>
 
 1352261949 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_default.cpp
 	<iostream>
 
-1352580481 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_unittests.cpp
+1352606666 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_unittests.cpp
 	"shared/unittest.h"
+	"testhelper.h"
+	"algorithms/BaseAlgorithm.h"
 
 1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\unittest.h
 	<UnitTest++.h>
@@ -24,7 +30,7 @@
 
 1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\main.h
 
-1352579866 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithmbase.cpp
+1352605653 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithmbase.cpp
 	"Algorithm.hpp"
 
 1188366510 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\unittest++.h
@@ -111,7 +117,7 @@
 1225377516 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
 	"../Config.h"
 
-1352591262 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.cpp
+1352608699 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.cpp
 	"testhelper.h"
 	<fstream>
 	<sstream>
