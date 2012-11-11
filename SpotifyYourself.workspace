@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
-		<Project filename="bestbefore/bestbefore.cbp" active="1" />
+		<Project filename="bestbefore/bestbefore.cbp" />
 		<Project filename="lottery/lottery.cbp" />
-		<Project filename="bilateral/bilateral.cbp" />
+		<Project filename="bilateral/bilateral.cbp" active="1" />
 	</Workspace>
 </CodeBlocks_workspace_file>

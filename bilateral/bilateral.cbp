@@ -34,12 +34,17 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DUNITTEST" />
 					<Add directory="..\UnitTest++\src" />
 				</Compiler>
 				<Linker>
 					<Add library="libUnitTest++.a" />
 					<Add directory="..\UnitTest++\bin\Release" />
 				</Linker>
+				<ExtraCommands>
+					<Add after='xcopy &quot;$(PROJECTDIR)\test_data\*.*&quot; &quot;$(TARGET_OUTPUT_DIR)&quot; /q/r/y' />
+					<Mode after="always" />
+				</ExtraCommands>
 			</Target>
 		</Build>
 		<Compiler>
@@ -47,11 +52,17 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="Graph.hpp" />
+		<Unit filename="algorithms\Algorithm.hpp" />
+		<Unit filename="algorithms\AlgorithmBase.cpp" />
+		<Unit filename="algorithms\BaseAlgorithm.cpp" />
+		<Unit filename="algorithms\BaseAlgorithm.h" />
 		<Unit filename="main_default.cpp" />
 		<Unit filename="main_unittests.cpp" />
 		<Unit filename="shared\main.cpp" />
 		<Unit filename="shared\main.h" />
 		<Unit filename="shared\unittest.h" />
+		<Unit filename="testhelper.cpp" />
+		<Unit filename="testhelper.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
