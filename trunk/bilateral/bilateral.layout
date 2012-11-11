@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
-	<File name="main_unittests.cpp" open="1" top="1" tabpos="0">
-		<Cursor position="0" topLine="0" />
+	<ActiveTarget name="Debug - UnitTest" />
+	<File name="Graph.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="467" topLine="3" />
+	</File>
+	<File name="algorithms\Algorithm.hpp" open="1" top="0" tabpos="4">
+		<Cursor position="934" topLine="3" />
+	</File>
+	<File name="algorithms\AlgorithmBase.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="131" topLine="0" />
+	</File>
+	<File name="algorithms\BaseAlgorithm.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="160" topLine="0" />
+	</File>
+	<File name="algorithms\BaseAlgorithm.h" open="0" top="0" tabpos="0">
+		<Cursor position="238" topLine="0" />
+	</File>
+	<File name="main_unittests.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="362" topLine="0" />
+	</File>
+	<File name="shared\main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="126" topLine="0" />
+	</File>
+	<File name="testhelper.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="1830" topLine="44" />
+	</File>
+	<File name="testhelper.h" open="0" top="0" tabpos="0">
+		<Cursor position="192" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
