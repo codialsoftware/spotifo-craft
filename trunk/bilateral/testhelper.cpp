@@ -28,7 +28,8 @@ void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
 }
 
 string getPath(const string& fileName) {
-    return "bin\\UnitTest-Debug\\" + fileName;
+//    return "bin\\UnitTest-Debug\\" + fileName;
+    return fileName;
 }
 
 void openFile(ifstream& input, const string& testName) {
