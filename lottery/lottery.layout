@@ -7,6 +7,9 @@
 	<File name="algorithms\AlgorithmBase.h" open="0" top="0" tabpos="0">
 		<Cursor position="224" topLine="0" />
 	</File>
+	<File name="combinatorics\Tests\RecursiveBuffered.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="319" topLine="0" />
+	</File>
 	<File name="combinatorics\naive.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="520" topLine="0" />
 	</File>

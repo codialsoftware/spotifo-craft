@@ -1,6 +1,7 @@
 #include "Graph.hpp"
 #include <cstring>
 #include <stdexcept>
+#include <algorithm>
 
 using namespace SpotifyPuzzles::Bilateral;
 using namespace std;
@@ -11,21 +12,76 @@ ProjectGraph::ProjectGraph() {
 
 void ProjectGraph::Clear() {
     memset(m_Assosiations, 0, sizeof(bool) * DivisionEmployeesCount * DivisionEmployeesCount);
-}
-
-void ProjectGraph::UnAssign(int idA, int idB) {
-    AreAssigned(idA, idB) = false;
+    memset(m_NodesDegree, 0, sizeof(int) * NodesCount);
 }
 
 void ProjectGraph::Assign(int idA, int idB) {
-    AreAssigned(idA, idB) = true;
+    areAssigned(idA, idB) = true;
+    ++degree(idA);
+    ++degree(idB);
 }
 
-bool& ProjectGraph::AreAssigned(int idA, int idB) {
+template <class It, class Comp>
+It findMaxElement(It begin, It end, Comp comparer) {
+    It max = begin;
+    size_t dist = ProjectGraph::EmployeeMinId;
+
+    for (It current = begin; ++current != end; ) {
+        int cdist = current - begin + ProjectGraph::EmployeeMinId;
+        if (comparer(*current, *max, cdist, dist)) {
+            max = current;
+            dist = cdist;
+        }
+    }
+
+    return max;
+}
+
+int findBestNodeId(const int *begin, const int *end) {
+    int result = findMaxElement(begin, end, NodeDegreeGreaterComparer()) - begin;
+    return result + ProjectGraph::EmployeeMinId;
+}
+
+int ProjectGraph::BestNode() const {
+    return findBestNodeId(m_NodesDegree, m_NodesDegree + NodesCount);
+}
+
+void ProjectGraph::UnAssign(int idA, int idB) {
+    areAssigned(idA, idB) = false;
+    --degree(idA);
+    --degree(idB);
+}
+
+void ProjectGraph::UnAssignAll(int id) {
+    int dl = 0, londonIdx = 0;
+    int ds = 0, stockholmIdx = 0;
+
+    if (TryConvertToLondonIndex(id)) {
+        londonIdx = id;
+        ds = 1;
+    }
+    else if (TryConvertToStockholmIndex(id)) {
+        stockholmIdx = id;
+        dl = 1;
+    }
+
+    for (;
+        londonIdx != DivisionEmployeesCount && stockholmIdx != DivisionEmployeesCount;
+        londonIdx += dl, stockholmIdx += ds) {
+        if (WorkTogether(londonIdx, stockholmIdx)) {
+            --degree(londonIdx + LondonMinId);
+            --degree(stockholmIdx + StockholmMinId);
+
+            WorkTogether(londonIdx, stockholmIdx) = false;
+        }
+    }
+}
+
+bool& ProjectGraph::areAssigned(int idA, int idB) {
     int london = idA;
     int stockholm = idB;
 
-    if (ConvertIds(london, stockholm)) {
+    if (convertIds(london, stockholm)) {
         return WorkTogether(london, stockholm);
     }
     else {
@@ -45,7 +101,7 @@ int getFirstValidIndex(int v1, int v2, int rangeInf, int rangeSup) {
     return ProjectGraph::InvalidId;
 }
 
-bool ProjectGraph::ConvertIds(int &toLondon, int &toStockholm) const {
+bool ProjectGraph::convertIds(int &toLondon, int &toStockholm) const {
     int resultLondon = getFirstValidIndex(toLondon, toStockholm, LondonMinId, LondonMaxId);
     int resultStockholm = getFirstValidIndex(toLondon, toStockholm, StockholmMinId, StockholmMaxId);
     if (resultLondon != InvalidId && resultStockholm != InvalidId) {

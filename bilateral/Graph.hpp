@@ -13,24 +13,31 @@ namespace SpotifyPuzzles { namespace Bilateral {
                 StockholmMaxId = 1999,
                 EmployeeMinId = StockholmMinId,
                 EmployeeMaxId = LondonMaxId,
-                InvalidId = -1
+                InvalidId = -1,
+
+                FriendId = 1009
             };
         private:
+            enum {
+                NodesCount = DivisionEmployeesCount * 2
+            };
+
             bool m_Assosiations[DivisionEmployeesCount][DivisionEmployeesCount];
             #if !defined AssertIndex
             # define AssertIndex(idx) if ((idx) < 0 || SpotifyPuzzles::Bilateral::ProjectGraph::DivisionEmployeesCount <= (idx)) \
                                         throw std::out_of_range("Index " #idx " is out of range!");
             #endif
 
+            int m_NodesDegree[NodesCount];
         public:
             ProjectGraph();
 
             void Clear();
             void Assign(int idA, int idB);
             void UnAssign(int idA, int idB);
-            bool& AreAssigned(int idA, int idB);
+            void UnAssignAll(int id);
             inline bool AreAssigned(int idA, int idB) const {
-                return const_cast<ProjectGraph*>(this)->AreAssigned(idA, idB);
+                return const_cast<ProjectGraph*>(this)->areAssigned(idA, idB);
             }
 
             inline static bool TryConvertToLondonIndex(int &id) {
@@ -78,9 +85,33 @@ namespace SpotifyPuzzles { namespace Bilateral {
             inline bool WorkTogether(int londonIndex, int stockholmIndex) const {
                 return const_cast<ProjectGraph*>(this)->WorkTogether(londonIndex, stockholmIndex);
             }
-        protected:
-            bool ConvertIds(int &toLondon, int &toStockholm) const;
 
+            int Degree(int id) const {
+                return const_cast<ProjectGraph*>(this)->degree(id);
+            }
+
+            int BestNode() const;
+
+        private:
+            inline int& degree(int id) {
+                return m_NodesDegree[id - ProjectGraph::EmployeeMinId];
+            }
+            bool& areAssigned(int idA, int idB);
+
+        protected:
+            bool convertIds(int &toLondon, int &toStockholm) const;
+            void clearRow(int index);
+            void clearColumn(int index);
+    };
+
+    struct NodeDegreeGreaterComparer {
+        inline bool operator()(int compare, int max, int compareIdx, int maxIdx) {
+            if (compare == max) {
+                return compareIdx == ProjectGraph::FriendId;
+            }
+
+            return compare > max;
+        }
     };
 }}
 
