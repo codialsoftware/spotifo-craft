@@ -75,15 +75,8 @@ namespace SpotifyPuzzles { namespace Bilateral {
                 }
             }
 
-            inline bool& WorkTogether(int londonIndex, int stockholmIndex) {
-                AssertIndex(londonIndex);
-                AssertIndex(stockholmIndex);
-
-                return m_Assosiations[londonIndex][stockholmIndex];
-            }
-
             inline bool WorkTogether(int londonIndex, int stockholmIndex) const {
-                return const_cast<ProjectGraph*>(this)->WorkTogether(londonIndex, stockholmIndex);
+                return const_cast<ProjectGraph*>(this)->workTogether(londonIndex, stockholmIndex);
             }
 
             int Degree(int id) const {
@@ -96,6 +89,13 @@ namespace SpotifyPuzzles { namespace Bilateral {
             inline int& degree(int id) {
                 return m_NodesDegree[id - ProjectGraph::EmployeeMinId];
             }
+            inline bool& workTogether(int londonIndex, int stockholmIndex) {
+                AssertIndex(londonIndex);
+                AssertIndex(stockholmIndex);
+
+                return m_Assosiations[londonIndex][stockholmIndex];
+            }
+
             bool& areAssigned(int idA, int idB);
 
         protected:

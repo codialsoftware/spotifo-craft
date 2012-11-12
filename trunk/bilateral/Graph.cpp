@@ -72,7 +72,7 @@ void ProjectGraph::UnAssignAll(int id) {
             --degree(londonIdx + LondonMinId);
             --degree(stockholmIdx + StockholmMinId);
 
-            WorkTogether(londonIdx, stockholmIdx) = false;
+            workTogether(londonIdx, stockholmIdx) = false;
         }
     }
 }
@@ -82,7 +82,7 @@ bool& ProjectGraph::areAssigned(int idA, int idB) {
     int stockholm = idB;
 
     if (convertIds(london, stockholm)) {
-        return WorkTogether(london, stockholm);
+        return workTogether(london, stockholm);
     }
     else {
         throw invalid_argument("idA or idB are either out of bounds or indicate employees from the same location!");
