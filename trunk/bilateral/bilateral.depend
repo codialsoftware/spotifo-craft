@@ -118,7 +118,7 @@
 1225377516 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\win32\timehelpers.h
 	"../Config.h"
 
-1352681837 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.cpp
+1352691099 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\testhelper.cpp
 	"testhelper.h"
 	<fstream>
 	<sstream>
@@ -128,20 +128,21 @@
 	<string>
 	"algorithms/Algorithm.hpp"
 
-1352690119 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\internaltests\graphtests.cpp
+1352692568 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\internaltests\graphtests.cpp
 	<UnitTest++.h>
 	"..\Graph.hpp"
 	<stdexcept>
 
-1352689914 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.hpp
+1352692561 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.hpp
 	<stdexcept>
 
-1352689914 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\graph.hpp
+1352692561 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\graph.hpp
 	<stdexcept>
 
-1352689922 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.cpp
+1352692547 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.cpp
 	"Graph.hpp"
 	<cstring>
+	<stdexcept>
 
 1352687724 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\constraints.h
 

@@ -67,12 +67,17 @@ SUITE(ProjectGraph) {
 //	    CHECK_THROW(WorkTogether(ProjectGraph::StockholmMaxId, ProjectGraph::StockholmMinId), out_of_range);
 //	}
 //
-	TEST_FIXTURE(ProjectGraph, ClearObjectOnInitialization) {
+
+    void checkClean(ProjectGraph const& graph) {
 	    for (int i = 0; i < ProjectGraph::DivisionEmployeesCount; ++i) {
             for (int j = 0; j < ProjectGraph::DivisionEmployeesCount; ++j) {
-                CHECK_EQUAL(false, WorkTogether(i, j));
+                CHECK_EQUAL(false, graph.WorkTogether(i, j));
             }
 	    }
+    }
+
+	TEST_FIXTURE(ProjectGraph, ClearObjectOnInitialization) {
+	    checkClean(*this);
 	}
 
 	TEST_FIXTURE(ProjectGraph, GetAssign_Inbounds_ModifyValue) {
@@ -93,6 +98,56 @@ SUITE(ProjectGraph) {
 	    CHECK_EQUAL(true, WorkTogether(a, b));
 	    Clear();
 	    CHECK_EQUAL(false, WorkTogether(a, b));
+	}
+
+    #define assignTestSymetry(a,  b) {\
+        Clear();\
+        checkClean(*this);\
+        Assign((a), (b));\
+        CHECK_EQUAL(true, AreAssigned((a), (b)));\
+        CHECK_EQUAL(true, AreAssigned((b), (a)));\
+    }
+	TEST_FIXTURE(ProjectGraph, Assign) {
+	    int lon = ProjectGraph::LondonMinId;
+	    int sto = ProjectGraph::StockholmMaxId;
+
+        assignTestSymetry(lon, sto);
+        CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+
+        assignTestSymetry(sto, lon);
+        CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+	}
+
+	TEST_FIXTURE(ProjectGraph, AreAssignTwoEmployeesFromSameLocation_Failes) {
+	    CHECK_THROW(Assign(ProjectGraph::LondonMinId, ProjectGraph::LondonMinId+1), invalid_argument);
+	    CHECK_THROW(Assign(ProjectGraph::StockholmMinId, ProjectGraph::StockholmMinId+1), invalid_argument);
+	    CHECK_THROW(AreAssigned(ProjectGraph::LondonMinId, ProjectGraph::LondonMinId+1), invalid_argument);
+	    CHECK_THROW(AreAssigned(ProjectGraph::StockholmMinId, ProjectGraph::StockholmMinId+1), invalid_argument);
+	    checkClean(*this);
+	}
+
+	TEST_FIXTURE(ProjectGraph, CheckAreAssigned_Assign_Equality) {
+	    int lon = ProjectGraph::LondonMaxId;
+	    int sto = ProjectGraph::StockholmMaxId;
+
+	    Assign(lon, sto);
+	    CHECK_EQUAL(true, AreAssigned(lon, sto));
+	    CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+
+	    Clear();
+	    checkClean(*this);
+	    AreAssigned(lon, sto) = true;
+	    CHECK_EQUAL(true, AreAssigned(lon, sto));
+	    CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+	}
+
+	TEST_FIXTURE(ProjectGraph, Assign_UnAssign) {
+	    int lon = ProjectGraph::LondonMaxId;
+	    int sto = ProjectGraph::StockholmMaxId;
+
+	    Assign(lon, sto);
+	    UnAssign(sto, lon);
+	    checkClean(*this);
 	}
 }
 
