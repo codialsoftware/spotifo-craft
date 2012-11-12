@@ -27,6 +27,11 @@ namespace SpotifyPuzzles { namespace Bilateral {
 
             void Clear();
             void Assign(int idA, int idB);
+            void UnAssign(int idA, int idB);
+            bool& AreAssigned(int idA, int idB);
+            inline bool AreAssigned(int idA, int idB) const {
+                return const_cast<ProjectGraph*>(this)->AreAssigned(idA, idB);
+            }
 
             inline static bool TryConvertToLondonIndex(int &id) {
                 return TryConvertToIndex(id, LondonMinId, LondonMaxId);
@@ -74,7 +79,7 @@ namespace SpotifyPuzzles { namespace Bilateral {
                 return const_cast<ProjectGraph*>(this)->WorkTogether(londonIndex, stockholmIndex);
             }
         protected:
-            bool ConvertIds(int &toLondon, int &toStockholm);
+            bool ConvertIds(int &toLondon, int &toStockholm) const;
 
     };
 }}
