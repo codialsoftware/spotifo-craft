@@ -17,6 +17,10 @@ namespace SpotifyPuzzles { namespace Bilateral {
             };
         private:
             bool m_Assosiations[DivisionEmployeesCount][DivisionEmployeesCount];
+            #if !defined AssertIndex
+            # define AssertIndex(idx) if ((idx) < 0 || SpotifyPuzzles::Bilateral::ProjectGraph::DivisionEmployeesCount <= (idx)) \
+                                        throw std::out_of_range("Index " #idx " is out of range!");
+            #endif
 
         public:
             ProjectGraph();
@@ -59,20 +63,19 @@ namespace SpotifyPuzzles { namespace Bilateral {
                 }
             }
 
-            inline bool& WorkTogether(int londonId, int stockholmId) {
-                if (TryConvertToLondonIndex(londonId) && TryConvertToStockholmIndex(stockholmId)) {
-                    return m_Assosiations[londonId][stockholmId];
-                }
-                else {
-                    throw std::out_of_range("londonId or stockholmId is out of its bounds");
-                }
+            inline bool& WorkTogether(int londonIndex, int stockholmIndex) {
+                AssertIndex(londonIndex);
+                AssertIndex(stockholmIndex);
+
+                return m_Assosiations[londonIndex][stockholmIndex];
             }
 
-            inline bool WorkTogether(int londonId, int stockholmId) const {
-                return const_cast<ProjectGraph*>(this)->WorkTogether(londonId, stockholmId);
+            inline bool WorkTogether(int londonIndex, int stockholmIndex) const {
+                return const_cast<ProjectGraph*>(this)->WorkTogether(londonIndex, stockholmIndex);
             }
         protected:
             bool ConvertIds(int &toLondon, int &toStockholm);
+
     };
 }}
 
