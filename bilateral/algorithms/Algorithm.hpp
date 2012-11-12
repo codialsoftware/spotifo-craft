@@ -6,10 +6,12 @@
 #include <iterator>
 #include <algorithm>
 #include <vector>
+#include "..\\Graph.hpp"
 namespace SpotifyPuzzles { namespace Bilateral { namespace Algorithms {
     class AlgorithmBase {
         protected:
             std::vector<int> m_Results;
+            ProjectGraph m_Projects;
 
             virtual void Run(std::istream& in);
         public:

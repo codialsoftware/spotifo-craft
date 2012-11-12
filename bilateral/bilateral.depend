@@ -5,17 +5,18 @@
 1352605620 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\basealgorithm.h
 	"Algorithm.hpp"
 
-1352605679 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithm.hpp
+1352685890 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithm.hpp
 	<string>
 	<iostream>
 	<iterator>
 	<algorithm>
 	<vector>
+	"..\\Graph.hpp"
 
 1352261949 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_default.cpp
 	<iostream>
 
-1352606666 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_unittests.cpp
+1352685640 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\main_unittests.cpp
 	"shared/unittest.h"
 	"testhelper.h"
 	"algorithms/BaseAlgorithm.h"
@@ -30,7 +31,7 @@
 
 1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\main.h
 
-1352605653 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithmbase.cpp
+1352682810 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\algorithms\algorithmbase.cpp
 	"Algorithm.hpp"
 
 1188366510 c:\documents and settings\lp\pulpit\programming\spotifyyourself\unittest++\src\unittest++.h
@@ -126,4 +127,23 @@
 	"shared/unittest.h"
 	<string>
 	"algorithms/Algorithm.hpp"
+
+1352689024 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\internaltests\graphtests.cpp
+	<UnitTest++.h>
+	"..\Graph.hpp"
+	<stdexcept>
+
+1352688944 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.hpp
+	<stdexcept>
+
+1352688944 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\graph.hpp
+	<stdexcept>
+
+1352688944 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.cpp
+	"Graph.hpp"
+	<cstring>
+
+1352687724 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\constraints.h
+
+1352687724 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\constraints.h
 
