@@ -29,6 +29,7 @@
 			</Target>
 			<Target title="Debug - UnitTest">
 				<Option output="bin\UnitTest-Debug\bilateral" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\UnitTest-Debug\" />
 				<Option object_output="obj\UnitTest-Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -51,7 +52,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Graph.cpp" />
 		<Unit filename="Graph.hpp" />
+		<Unit filename="InternalTests\GraphTests.cpp">
+			<Option target="Debug - UnitTest" />
+		</Unit>
 		<Unit filename="algorithms\Algorithm.hpp" />
 		<Unit filename="algorithms\AlgorithmBase.cpp" />
 		<Unit filename="algorithms\BaseAlgorithm.cpp" />

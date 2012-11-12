@@ -21,8 +21,11 @@
 	"testhelper.h"
 	"algorithms/BaseAlgorithm.h"
 
-1352255152 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\unittest.h
+1352758757 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\unittest.h
 	<UnitTest++.h>
+	<iostream>
+	<sstream>
+	<iomanip>
 
 1352255152 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\shared\main.cpp
 	<iostream>
@@ -128,21 +131,23 @@
 	<string>
 	"algorithms/Algorithm.hpp"
 
-1352692568 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\internaltests\graphtests.cpp
-	<UnitTest++.h>
+1352758477 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\internaltests\graphtests.cpp
+	"..\shared\unittest.h"
 	"..\Graph.hpp"
 	<stdexcept>
+	<iostream>
 
-1352692561 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.hpp
+1352757674 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.hpp
 	<stdexcept>
 
-1352692561 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\graph.hpp
+1352757674 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\\graph.hpp
 	<stdexcept>
 
-1352692547 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.cpp
+1352758239 source:c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\graph.cpp
 	"Graph.hpp"
 	<cstring>
 	<stdexcept>
+	<algorithm>
 
 1352687724 c:\documents and settings\lp\pulpit\programming\spotifyyourself\bilateral\constraints.h
 
