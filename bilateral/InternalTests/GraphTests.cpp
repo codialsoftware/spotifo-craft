@@ -13,6 +13,8 @@ SUITE(ProjectGraph) {
                 CHECK_EQUAL(false, graph.WorkTogether(i, j));
             }
 	    }
+
+	    CHECK_EQUAL((int)ProjectGraph::FriendId, graph.BestNode());
     }
 
 	TEST_LOGGED(LondonIndexConverters_GoodValues) {
@@ -80,26 +82,6 @@ SUITE(ProjectGraph) {
 	    checkClean(*this);
 	}
 
-	TEST_FIXTURE_LOGGED(ProjectGraph, GetAssign_Inbounds_ModifyValue) {
-	    int a = ProjectGraph::DivisionEmployeesCount / 2;
-	    int b = a;
-
-	    CHECK_EQUAL(false, WorkTogether(a, b));
-	    WorkTogether(a, b) = true;
-	    CHECK_EQUAL(true, WorkTogether(a, b));
-	}
-
-	TEST_FIXTURE_LOGGED(ProjectGraph, Clear_ResetsValue) {
-	    int a = ProjectGraph::DivisionEmployeesCount-1;
-        int b = a;
-
-	    CHECK_EQUAL(false, WorkTogether(a, b));
-	    WorkTogether(a, b) = true;
-	    CHECK_EQUAL(true, WorkTogether(a, b));
-	    Clear();
-	    CHECK_EQUAL(false, WorkTogether(a, b));
-	}
-
     #define assignTestSymetry(a,  b) {\
         Clear();\
         checkClean(*this);\
@@ -116,6 +98,7 @@ SUITE(ProjectGraph) {
 
         assignTestSymetry(sto, lon);
         CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+        CHECK_EQUAL(min(lon, sto), BestNode());
 	}
 
 	TEST_FIXTURE_LOGGED(ProjectGraph, AreAssignTwoEmployeesFromSameLocation_Failes) {
@@ -133,6 +116,7 @@ SUITE(ProjectGraph) {
 	    Assign(lon, sto);
 	    CHECK_EQUAL(true, AreAssigned(lon, sto));
 	    CHECK_EQUAL(true, WorkTogether(lon - ProjectGraph::LondonMinId, sto - ProjectGraph::StockholmMinId));
+        CHECK_EQUAL(min(lon, sto), BestNode());
 
 	    Clear();
 	    checkClean(*this);
@@ -143,6 +127,7 @@ SUITE(ProjectGraph) {
 	    int sto = ProjectGraph::StockholmMaxId;
 
 	    Assign(lon, sto);
+        CHECK_EQUAL(min(lon, sto), BestNode());
 	    UnAssign(sto, lon);
 	    checkClean(*this);
 	}
@@ -161,6 +146,24 @@ SUITE(ProjectGraph) {
 	    CHECK_EQUAL((int)ProjectGraph::FriendId, BestNode());
 	}
 
+	TEST_FIXTURE_LOGGED(ProjectGraph, BestNodeForMyFriend) {
+	    int startId = ProjectGraph::StockholmMaxId;
+	    int myId = ProjectGraph::LondonMinId;
+
+	    checkClean(*this);
+	    Assign(myId, startId);
+	    CHECK_EQUAL(min(myId, startId), BestNode());
+	    UnAssign(myId, startId);
+	    CHECK_EQUAL((int)ProjectGraph::FriendId, BestNode());
+
+	    Assign(myId, startId);
+	    Assign(myId, startId-1);
+	    CHECK_EQUAL(myId, BestNode());
+	    UnAssign(myId, startId - 1);
+	    CHECK_EQUAL(min(myId, startId), BestNode());
+	    UnAssign(myId, startId);
+	    checkClean(*this);
+	}
 }
 
 #endif
