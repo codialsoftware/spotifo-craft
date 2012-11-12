@@ -55,35 +55,29 @@ SUITE(ProjectGraph) {
 	}
 
 	TEST_FIXTURE(ProjectGraph, GetAssign_OutOfBounds_IndexOutOfRange) {
-	    CHECK_THROW(WorkTogether(0, ProjectGraph::StockholmMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId-1, ProjectGraph::StockholmMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId+1, ProjectGraph::StockholmMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId, ProjectGraph::StockholmMinId-1), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId, ProjectGraph::StockholmMaxId+1), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId-1, ProjectGraph::StockholmMinId-1), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId-1, ProjectGraph::StockholmMaxId+1), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId+1, ProjectGraph::StockholmMinId-1), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId+1, ProjectGraph::StockholmMaxId+1), out_of_range);
+	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId, ProjectGraph::StockholmMinId), out_of_range);
+	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId, 0), out_of_range);
+	    CHECK_THROW(WorkTogether(0, ProjectGraph::DivisionEmployeesCount), out_of_range);
 	}
 
-	TEST_FIXTURE(ProjectGraph, GetAssign_OutOfBounds_TwoEmployeesInTheSameLocation) {
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId, ProjectGraph::LondonMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId, ProjectGraph::LondonMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::StockholmMinId, ProjectGraph::StockholmMinId), out_of_range);
-	    CHECK_THROW(WorkTogether(ProjectGraph::StockholmMaxId, ProjectGraph::StockholmMinId), out_of_range);
-	}
-
+//	TEST_FIXTURE(ProjectGraph, GetAssign_OutOfBounds_TwoEmployeesInTheSameLocation) {
+//	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMinId, ProjectGraph::LondonMinId), out_of_range);
+//	    CHECK_THROW(WorkTogether(ProjectGraph::LondonMaxId, ProjectGraph::LondonMinId), out_of_range);
+//	    CHECK_THROW(WorkTogether(ProjectGraph::StockholmMinId, ProjectGraph::StockholmMinId), out_of_range);
+//	    CHECK_THROW(WorkTogether(ProjectGraph::StockholmMaxId, ProjectGraph::StockholmMinId), out_of_range);
+//	}
+//
 	TEST_FIXTURE(ProjectGraph, ClearObjectOnInitialization) {
-	    for (int i = ProjectGraph::LondonMinId; i <= ProjectGraph::LondonMaxId; ++i) {
-            for (int j = ProjectGraph::StockholmMinId; j <= ProjectGraph::StockholmMaxId; ++j) {
+	    for (int i = 0; i < ProjectGraph::DivisionEmployeesCount; ++i) {
+            for (int j = 0; j < ProjectGraph::DivisionEmployeesCount; ++j) {
                 CHECK_EQUAL(false, WorkTogether(i, j));
             }
 	    }
 	}
 
 	TEST_FIXTURE(ProjectGraph, GetAssign_Inbounds_ModifyValue) {
-	    int a = ProjectGraph::LondonMinId + ProjectGraph::DivisionEmployeesCount / 2;
-	    int b = ProjectGraph::StockholmMinId + ProjectGraph::DivisionEmployeesCount / 2;
+	    int a = ProjectGraph::DivisionEmployeesCount / 2;
+	    int b = a;
 
 	    CHECK_EQUAL(false, WorkTogether(a, b));
 	    WorkTogether(a, b) = true;
@@ -91,8 +85,8 @@ SUITE(ProjectGraph) {
 	}
 
 	TEST_FIXTURE(ProjectGraph, Clear_ResetsValue) {
-	    int a = ProjectGraph::LondonMaxId;
-	    int b = ProjectGraph::StockholmMaxId;
+	    int a = ProjectGraph::DivisionEmployeesCount-1;
+        int b = a;
 
 	    CHECK_EQUAL(false, WorkTogether(a, b));
 	    WorkTogether(a, b) = true;

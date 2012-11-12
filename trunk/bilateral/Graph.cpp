@@ -16,7 +16,7 @@ void ProjectGraph::Assign(int idA, int idB) {
     int stockholm = idB;
 
     if (ConvertIds(london, stockholm)) {
-        WorkTogether(london, stockholm) = true;
+        WorkTogether(london, stockholm);
     }
 }
 
