@@ -36,7 +36,7 @@ void openFile(ifstream& input, const string& testName) {
     string fileName = getPath(testName + ".in");
     input.open(fileName.c_str());
 //    string path = ExePath();
-    fstream::iostate s = input.rdstate();
+//    fstream::iostate s = input.rdstate();
     if (input.is_open()) {
         input.exceptions(fstream::failbit | fstream::eofbit);
     }
