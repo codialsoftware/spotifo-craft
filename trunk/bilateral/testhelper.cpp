@@ -10,7 +10,7 @@ void openFile(ifstream& input, const string& testName);
 void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output);
 void checkResults(const string& testName, istream& input);
 
-void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
+void Tests::TestHelper::runTest(AlgorithmBase& algorithm, const string& testName) {
     ifstream input;
     openFile(input, testName);
 
@@ -27,6 +27,11 @@ void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
     checkResults(testName, results);
 }
 
+void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output) {
+    input >> algorithm;
+    output << algorithm;
+}
+
 string getPath(const string& fileName) {
 //    return "bin\\UnitTest-Debug\\" + fileName;
     return fileName;
@@ -40,11 +45,6 @@ void openFile(ifstream& input, const string& testName) {
     if (input.is_open()) {
         input.exceptions(fstream::failbit | fstream::eofbit);
     }
-}
-
-void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output) {
-    input >> algorithm;
-    output << algorithm;
 }
 
 void readResults(vector<int>& results, istream& input);
