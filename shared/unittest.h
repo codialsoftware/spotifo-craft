@@ -29,7 +29,9 @@
 
 
 #define TEST_LOGGED(Name) TEST_FIXTURE_LOGGED(EmptyFixture, Name)
-
+#define TEST_FAILED(Message) throw UnitTest::AssertException(Message, __FILE__, __LINE__);
+#define CHECK_ASSERT_EX(Cnd, Message)                              \
+    if (!(Cnd)) throw Message;
 
 #endif
 

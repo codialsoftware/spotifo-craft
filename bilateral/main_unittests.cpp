@@ -7,7 +7,6 @@ namespace {
     using namespace SpotifyPuzzles::Bilateral::Algorithms;
 
     TEST(SpotifyWebPageTests) {
-        return;
         BaseAlgorithm alg;
 
         TestHelper::test(alg, "spotify01");

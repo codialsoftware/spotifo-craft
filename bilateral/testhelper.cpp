@@ -21,7 +21,7 @@ void Tests::TestHelper::test(AlgorithmBase& algorithm, const string& testName) {
     }
     catch (...) {
         input.close();
-        CHECK(false);
+        TEST_FAILED("Unexpected exception while launching current algorithm.");
     }
 
     checkResults(testName, results);
@@ -47,30 +47,63 @@ void runAlgorithm(AlgorithmBase& algorithm, istream& input, ostream& output) {
     output << algorithm;
 }
 
+void readResults(vector<int>& results, istream& input);
+
+struct ByCheckEqualComparer {
+    template <class T>
+    inline bool operator()(T l, T r) {
+        ostringstream oss;
+        oss << "Algorithm result set's data does not match! Expected: " << l << " Actual: " << r;
+        CHECK_ASSERT_EX(l == r, oss.str());
+        return true;
+    }
+};
+
 void checkResults(const string& testName, istream& input) {
     string fileName = getPath(testName + ".out");
     fstream refInput;
     refInput.open(fileName.c_str(), fstream::in);
 
+    string errorMessage = "";
     try {
-        input.seekg(0);
-        int exp, is;
+        vector<int> refResults;
+        readResults(refResults, refInput);
 
-        input.exceptions(istream::failbit);
-        refInput.exceptions(istream::failbit);
+        vector<int> actResults;
+        readResults(actResults, input);
 
-        while (!refInput.eof()) {
-            refInput >> exp;
-            input >> is;
-
-            CHECK_EQUAL(exp, is);
-        }
+        CHECK_ASSERT_EX(refResults.size() == actResults.size(), "Algorithm result set's size is incorrect!");
+        sort(refResults.begin(), refResults.end());
+        sort(actResults.begin(), actResults.end());
+        equal(refResults.begin(), refResults.end(), actResults.begin(), ByCheckEqualComparer());
+    }
+    catch (const string& message) {
+        errorMessage = message;
+    }
+    catch (const char* message) {
+        errorMessage = message;
     }
     catch (...) {
-        CHECK(false);
+        errorMessage = "No further information available.";
     }
 
     refInput.close();
+
+    if (!errorMessage.empty()) {
+        errorMessage.insert(0, "Test " + testName + " failed. ");
+        TEST_FAILED(errorMessage.c_str());
+    }
+}
+
+void readResults(vector<int>& results, istream& input) {
+    input.exceptions(istream::failbit);
+    int count;
+    input >> count;
+
+    results.resize(count);
+    while (--count >= 0) {
+        input >> results[count];
+    }
 }
 
 #endif
