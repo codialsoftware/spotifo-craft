@@ -6,12 +6,13 @@ namespace {
     using namespace Tests;
     using namespace SpotifyPuzzles::Bilateral::Algorithms;
 
-    TEST(SpotifyWebPageTests) {
-        BaseAlgorithm alg;
-
-        TestHelper::test(alg, "spotify01");
-        TestHelper::test(alg, "spotify02");
+    TEST_LOGGED(SpotifyWebPageTests) {
+        TestHelper::Test(BaseAlgorithm(), "spotify01");
+        TestHelper::Test(BaseAlgorithm(), "spotify02");
     }
+//    TEST_LOGGED(SpotifyWebPageTests_DataSet03) {
+//        TestHelper::Test(BaseAlgorithm(), "spotify03");
+//    }
 }
 
 
