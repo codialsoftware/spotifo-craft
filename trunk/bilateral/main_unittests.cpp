@@ -10,6 +10,12 @@ namespace {
         TestHelper::Test(BaseAlgorithm(), "spotify01");
         TestHelper::Test(BaseAlgorithm(), "spotify02");
     }
+    TEST_LOGGED(MyTest_NoFriend) {
+        TestHelper::Test(BaseAlgorithm(), "myTest01");
+    }
+    TEST_LOGGED(MyTest_WithFriend) {
+        TestHelper::Test(BaseAlgorithm(), "myTest02");
+    }
 //    TEST_LOGGED(SpotifyWebPageTests_DataSet03) {
 //        TestHelper::Test(BaseAlgorithm(), "spotify03");
 //    }
