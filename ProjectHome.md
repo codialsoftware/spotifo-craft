@@ -1,0 +1,1 @@
+On the web page: http://www.spotify.com/int/jobs/tech/ Spotify publishes puzzles to solve by anybody. This project is my answer to that puzzles.
